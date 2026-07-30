@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Icon } from "./Icons";
 
 export default function Footer() {
@@ -38,16 +39,18 @@ export default function Footer() {
 
         <div className="grid md:grid-cols-4 gap-10">
           <div className="md:col-span-1">
-            <Link href="/" className="flex items-center gap-3 mb-5">
-              <div className="grid place-items-center h-11 w-11 rounded-full bg-gold-500 text-teal-900">
-                <Icon.Tooth className="h-6 w-6" />
-              </div>
-              <div>
-                <div className="font-display text-xl text-cream-50">Pombra Dental</div>
-                <div className="text-[10px] uppercase tracking-[0.28em] text-gold-400">
-                  Excellence
-                </div>
-              </div>
+            <Link
+              href="/"
+              aria-label="Pombra Dental Excellence — home"
+              className="inline-block rounded-2xl bg-cream-50 p-3 mb-5 shadow-soft"
+            >
+              <Image
+                src="/logo.png"
+                alt="Pombra Dental Excellence"
+                width={350}
+                height={330}
+                className="h-24 w-auto"
+              />
             </Link>
             <p className="text-sm text-cream-100/60 italic">
               Amazing smiles. Pampered care.

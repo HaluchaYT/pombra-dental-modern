@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { Icon } from "./Icons";
@@ -58,16 +59,15 @@ export default function Nav() {
         }`}
       >
         <div className="container-x flex items-center justify-between py-4">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="grid place-items-center h-11 w-11 rounded-full bg-teal-500 text-cream-50 shadow-soft group-hover:shadow-glow transition">
-              <Icon.Tooth className="h-6 w-6" />
-            </div>
-            <div className="leading-tight">
-              <div className="font-display text-xl text-ink-900">Pombra Dental</div>
-              <div className="text-[10px] uppercase tracking-[0.28em] text-gold-600 -mt-0.5">
-                Excellence
-              </div>
-            </div>
+          <Link href="/" aria-label="Pombra Dental Excellence — home" className="block">
+            <Image
+              src="/logo.png"
+              alt="Pombra Dental Excellence"
+              width={350}
+              height={330}
+              priority
+              className="h-14 md:h-16 w-auto"
+            />
           </Link>
 
           <nav className="hidden lg:flex items-center gap-8">
@@ -164,16 +164,19 @@ export default function Nav() {
             open ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <div className="flex items-center justify-between border-b border-teal-100 p-6 flex-shrink-0">
+          <div className="flex items-center justify-between border-b border-teal-100 p-5 flex-shrink-0">
             <Link
               href="/"
               onClick={() => setOpen(false)}
-              className="flex items-center gap-2"
+              aria-label="Pombra Dental Excellence — home"
             >
-              <div className="grid place-items-center h-9 w-9 rounded-full bg-teal-500 text-cream-50">
-                <Icon.Tooth className="h-5 w-5" />
-              </div>
-              <div className="font-display text-lg text-ink-900">Menu</div>
+              <Image
+                src="/logo.png"
+                alt="Pombra Dental Excellence"
+                width={350}
+                height={330}
+                className="h-12 w-auto"
+              />
             </Link>
             <button
               aria-label="Close menu"
